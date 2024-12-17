@@ -38,7 +38,7 @@ class Test:
         assert ComplexNumber(2, 3).__repr__() == "ComplexNumber(re=2, img=3)"
 
     def test_str(self):
-        assert ComplexNumber(2, 3).__repr__() == "2 + 3i"
+        assert ComplexNumber(2, 3).__str__() == "2 + 3i"
 
     def test_getter(self):
         complex_number = ComplexNumber(2, 6)

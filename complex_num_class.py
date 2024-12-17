@@ -6,14 +6,21 @@ class ComplexNumber:
         self.re = real_part
         self.img = img_part
 
+    def __repr__(self):
+        return f"ComplexNumber(re={self.re}, img={self.img}"
+
+    def __str__(self):
+        return f"{self.re} + {self.img}i"
+
     def __eq__(self, other):
         return self.re == other.re and self.img == other.img
 
     def __lt__(self, other):
-        pass
+        return self.re < other.re and self.img < other.img
 
     def __gt__(self, other):
-        pass
+        return self.re > other.re and self.img > other.img
+
 
     @property
     def re(self):
@@ -36,3 +43,13 @@ class ComplexNumber:
             self.__img = img_part
         else:
             raise Exception
+
+
+if __name__ == '__main__':
+    c1 = ComplexNumber(2,3)
+    print(c1)           # prints __str__
+    print([c1])         # prints __repr__
+
+
+# python "mluvi" binarne, nevi jak vyprintovat citelne vystup, proto vyuziva
+# metody __repr__ a __str__
